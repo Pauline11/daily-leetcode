@@ -116,11 +116,12 @@ class Solution:
         return new_tag + 1
 ```
 
-##Day  2
+## Day  2
 
 ### 27.Remove Element
 
-**Description:**" Given an array *nums* and a value *val*, remove all instances of that 	value [**in-place**](https://en.wikipedia.org/wiki/In-place_algorithm) and return the new length.Do not allocate extra space for another array, you must do this by **modifying the input array in-place** with O(1) extra memory. "
+> **Description:**" Given an array *nums* and a value *val*, remove all instances of that 	value [**in-place**](https://en.wikipedia.org/wiki/In-place_algorithm) and return the new length.Do not allocate extra space for another array, you must do this by **modifying the input array in-place** with O(1) extra memory. "
+>
 
 ```python
 class Solution:
@@ -142,9 +143,10 @@ class Solution:
 
 **Conclusion**:和26题很相似，删除指定元素，要求**原地修改**并**返回**修改后的列表***长度***。定义一个标签变量，记录长度。
 
-###35.Search Insert Position
+### 35.Search Insert Position
 
-**Description:**Given a sorted array and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.You may assume no duplicates in the array.
+> **Description**:Given a sorted array and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.You may assume no duplicates in the array.
+>
 
 - 返回***位置索引***。自己写的，首先把目标值出现的三种特殊情况：小于最小值、等于最大值、大于最大值，单独拿出来讨论，然后遍历列表，相等就返回索引，不相等就判断target如果大于i的值并小于后一个值，返回索引+1,有点复杂。
 
@@ -263,13 +265,12 @@ class Solution:
 
 - [x] kp:**字符串是字符的有序集合，可以通过其位置来获得具体的元素。**
 
-##Day  4  (12/06/2018)
+## Day  4  (12/06/2018)
 
 ### 118.Pascal's Triangle（I）
 
-**"Description**":杨辉三角，Input: 5
-
-​			       		      Output:[     [1],    [1,1],   [1,2,1],  [1,3,3,1], [1,4,6,4,1]]
+> **Description**:杨辉三角，Input: 5  Output:[     [1],    [1,1],   [1,2,1],  [1,3,3,1], [1,4,6,4,1]]
+>
 
 - 看完答案，发现自己思路是对的，但有些乱而且没去实现。还是写的少。
 
@@ -305,7 +306,8 @@ def generate(self, numRows):
 
 ### 119.Pascal's Triangle(II)
 
-**Description:**Given a non-negative index *k* where *k* ≤ 33, return the *k*th index row    of the Pascal's triangle.Note that the row index starts from 0.
+> **Description**:Given a non-negative index *k* where *k* ≤ 33, return the *k*th index row  of the Pascal's triangle.Note that the row index starts from 0.
+>
 
 - 还是杨辉三角，不过给出数字i要求返回第(i+1)行的值
 
