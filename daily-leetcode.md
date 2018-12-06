@@ -263,4 +263,62 @@ class Solution:
 
 - [x] kp:**字符串是字符的有序集合，可以通过其位置来获得具体的元素。**
 
-##Day  4  (2018.12.)
+##Day  4  (12/06/2018)
+
+### 118.Pascal's Triangle（I）
+
+**"Description**":杨辉三角，Input: 5
+
+​			       		      Output:[     [1],    [1,1],   [1,2,1],  [1,3,3,1], [1,4,6,4,1]]
+
+- 看完答案，发现自己思路是对的，但有些乱而且没去实现。还是写的少。
+
+```python
+class Solution:
+    def generate(self, numRows):
+        triangle = []
+        for i in range(numRows):
+            # initial
+            row = [1] * (i + 1)
+            triangle.append(row)
+            # 每行只有首尾不需要修改的
+            for j in range(1, len(row) - 1):
+                row[j] = triangle[i-1][j-1] + triangle[i-1][j]
+        return triangle
+```
+
+- 大佬的答案，用了map，但是我没跑出来。回头再看。
+
+```python
+def generate(self, numRows):
+        res = [[1]]
+        for i in range(1, numRows):
+            res += [map(lambda x, y: x+y, res[-1] + [0], [0] + res[-1])]
+        return res[:numRows]
+    
+"""explanation: Any row can be constructed using the offset sum of the previous row. Example:
+    1 3 3 1 0 
+ +  0 1 3 3 1
+ =  1 4 6 4 1
+ """
+```
+
+### 119.Pascal's Triangle(II)
+
+**Description:**Given a non-negative index *k* where *k* ≤ 33, return the *k*th index row    of the Pascal's triangle.Note that the row index starts from 0.
+
+- 还是杨辉三角，不过给出数字i要求返回第(i+1)行的值
+
+```python
+class Solution:
+    def getRow(self, rowIndex):
+        tri = []
+        for i in range(rowIndex + 1):
+            row = [1] * (i + 1)
+            tri.append(row)
+            for j in range(1, len(row) - 1):
+                row[j] = tri[i-1][j-1] + tri[i-1][j]
+        return tri[-1]
+        
+```
+
